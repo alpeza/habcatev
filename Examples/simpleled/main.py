@@ -1,4 +1,4 @@
-import habcatev
+import habcatev,time
 
 class SimpleLed(habcatev.device.Device.Device):
     """docstring for MyDevice."""
@@ -9,7 +9,8 @@ class SimpleLed(habcatev.device.Device.Device):
     def on_event(self,topic,data):
         print("Topic:" + topic + "  Data: " + data)
 
-    
-
+    def loop(self):
+        print('hola')
+        time.sleep(5)
 
 SimpleLed().run()

@@ -16,6 +16,8 @@ class Device(MQTTClient.MQTTClient):
         self.connect()
         self.subscribeto(self._subscriptionarr)
         self._startListeners()
+        while True:
+            self.loop()
 
     def on_event(self,topic,data):
         pass 
@@ -23,3 +25,6 @@ class Device(MQTTClient.MQTTClient):
     def on_message(self,client, userdata, msg):
         self.on_event(msg.topic,msg.payload.decode())
         
+    def loop(self):
+        pass
+
