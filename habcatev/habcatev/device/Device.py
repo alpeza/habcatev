@@ -14,7 +14,7 @@ class Device(MQTTClient.MQTTClient):
     def run(self):
         # Iniciamos el mqtt
         self.connect()
-        self.subscribeto(self.subscriptionarr)
+        self.subscribeto(self._subscriptionarr)
         self._startListeners()
 
     def on_message(self,client, userdata, msg):
