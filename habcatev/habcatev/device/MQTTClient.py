@@ -5,6 +5,7 @@ currentdir = os.path.dirname(os.path.realpath(__file__))
 parentdir = os.path.dirname(currentdir)
 sys.path.append(parentdir)
 import common
+import traceback
 
 class MQTTClient(object):
     """Handles the mqtt connections"""
@@ -20,8 +21,15 @@ class MQTTClient(object):
     
     def connect(self):
         self.log.logger.debug('Tratando de conectar con MQTT ' + self.mqttserver + ':' + str(self.mqttport))
-        self.mqClient.connect(self.mqttserver, self.mqttport)
-
+        try:
+            self.mqClient.connect(self.mqttserver, self.mqttport)
+        except Exception as e:
+            traceback.print_exc()
+            self.log.logger.error(e)
+            self.log.logger.error('Ha sido imposible conectar con el servidor MQTT con la siguiente configuración ' + self.mqttserver + ':' + str(self.mqttport))
+            self.log.logger.error('Verifique que el servidor está levantado')
+            sys.exit(1)
+            
     def _receiveDataFromMQTT(self):
         self.mqClient.loop_forever()
     
