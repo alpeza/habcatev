@@ -14,7 +14,12 @@ class Device(MQTTClient.MQTTClient):
         self.parser.add_argument('--confile', help='Fichero YAML de configuración del componente')
         self.parser.add_argument('--run', action='store_true', help='Ejecuta el componente')
         self.args = self.parser.parse_args()
-        print(self.args)
+        
+        if self.args['run']:
+            self.run()
+        if self.args['confile']:
+            print('Fichero ' + self.args['confile'] )
+        #print(self.args)
 
     def setSubscriptionArr(self,subarr):
         self._subscriptionarr = subarr
