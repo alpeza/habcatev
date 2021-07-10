@@ -15,9 +15,9 @@ class Device(MQTTClient.MQTTClient):
         self.parser.add_argument('--run', action='store_true', help='Ejecuta el componente')
         self.args = self.parser.parse_args()
         
-        if self.args['run']:
+        if self.args.run:
             self.run()
-        if self.args['confile']:
+        if self.args.confile:
             print('Fichero ' + self.args['confile'] )
         #print(self.args)
 
