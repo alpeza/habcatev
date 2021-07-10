@@ -15,7 +15,7 @@ class SimpleExample(habcatev.device.Device.Device):
     def loop(self):
         # Suponemos que leemos el valor de un sensor y lo escribimos 
         # en un topic
-        self.log.logger.info('Enviando un mensaje a mqtt')
+        self.log.logger.info('Enviando un mensaje a mqtt ...')
         self.send('mitopico1', random.uniform(10.5, 75.5))
         time.sleep(5)
 
