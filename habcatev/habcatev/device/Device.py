@@ -13,7 +13,7 @@ class Device(MQTTClient.MQTTClient):
 
     def init(self):
         pass 
-    
+
     def _argumentsParse(self):
         # Device CLI
         self.parser = argparse.ArgumentParser(description=self.deviceDescription)
@@ -31,6 +31,7 @@ class Device(MQTTClient.MQTTClient):
             self.log.logger.debug('No hay fichero de configuracion')
     
         if self.args.run:
+            self.init()
             self.log.logger.debug('Se ejecuta el componente ...')
             self.run()
 
