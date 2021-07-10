@@ -6,11 +6,10 @@ class SimpleLed(habcatev.device.Device.Device):
         super(SimpleLed, self).__init__()
         self.setSubscriptionArr(['#'])
 
-    def on_message(self,client, userdata, msg):
-        print(client)
-        print(userdata)
-        print(msg)
-        print('********************++')
+    def on_event(topic,data):
+        print("Topic:" + topic + "  Data: " + data)
+
     
+
 
 SimpleLed().run()

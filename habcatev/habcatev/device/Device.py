@@ -17,5 +17,9 @@ class Device(MQTTClient.MQTTClient):
         self.subscribeto(self._subscriptionarr)
         self._startListeners()
 
+    def on_event(self,topic,data):
+        pass 
+
     def on_message(self,client, userdata, msg):
-        pass
+        self.on_event(msg.topic,msg.payload.decode())
+        
