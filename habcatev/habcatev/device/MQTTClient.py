@@ -29,7 +29,7 @@ class MQTTClient(object):
             self.log.logger.error('Ha sido imposible conectar con el servidor MQTT con la siguiente configuración ' + self.mqttserver + ':' + str(self.mqttport))
             self.log.logger.error('Verifique que el servidor está levantado')
             sys.exit(1)
-            
+
     def _receiveDataFromMQTT(self):
         self.mqClient.loop_forever()
     
@@ -42,6 +42,7 @@ class MQTTClient(object):
     def subscribeto(self,subscriptionsarr):
         self.mqClient.on_message = self.on_message
         for topic in subscriptionsarr:
+            self.log.logger.debug('Subscribiendo a ' + topic)
             self.mqClient.subscribe(topic)
 
 

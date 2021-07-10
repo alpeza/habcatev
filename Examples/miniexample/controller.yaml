@@ -1,0 +1,4 @@
+controller:
+  subscribe: 
+    - sensors/#
+  publish: send

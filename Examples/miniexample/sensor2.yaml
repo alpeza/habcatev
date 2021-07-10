@@ -1,0 +1,3 @@
+sensor:
+  publish: sensors/datasensor2
+  sleep: 5
