@@ -2,8 +2,7 @@
 
 Libreria python orientada a eventos para habcat.
 
-
-## Quick run
+## Quick start
 
 ```python
 import habcatev,time

@@ -19,4 +19,4 @@ class SimpleExample(habcatev.device.Device.Device):
         self.send('mitopico1', random.uniform(10.5, 75.5))
         time.sleep(5)
 
-SimpleExample().run()
+SimpleExample()
