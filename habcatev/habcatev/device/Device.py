@@ -11,7 +11,9 @@ class Device(MQTTClient.MQTTClient):
         self.deviceDescription = description
         self._argumentsParse()
 
-
+    def init(self):
+        pass 
+    
     def _argumentsParse(self):
         # Device CLI
         self.parser = argparse.ArgumentParser(description=self.deviceDescription)

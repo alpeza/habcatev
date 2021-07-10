@@ -4,8 +4,10 @@ import random,json
 class Controller(habcatev.device.Device.Device):
     def __init__(self):
         super(Controller, self).__init__()
-        self.setSubscriptionArr(self.config['controller']['subscribe'])
 
+    def init(self):
+        self.setSubscriptionArr(self.config['controller']['subscribe'])
+        
     def on_event(self,topic,data):
         self.log.logger.info("Ha llegado: Topic:" + topic + "  Data: " + data)
         datatosend = {
