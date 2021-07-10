@@ -1,20 +1,17 @@
 import paho.mqtt.client as mqtt
-import threading
+import threading,time
 
 class MQTTClient(object):
     """Handles the mqtt connections"""
-    def __init__(self, subarr=['#'], brokermqtt="localhost:1883", clientName=""):
+    def __init__(self, brokermqtt="localhost:1883"):
         super(MQTTClient, self).__init__()
         #Connection
         trimed = brokermqtt.split(':')
         self.mqttserver = trimed[0]
         self.mqttport   = int(trimed[1])
-        self.mqClient = mqtt.Client(clientName)
-
-        self.connect()
-        self.subscribeto(subarr)
-        self._startListeners()
-
+        self.deviceid = "habcatdevice-" + str(int(time.time()))
+        self.mqClient = mqtt.Client(self.deviceid)
+    
     def connect(self):
         self.mqClient.connect(self.mqttserver, self.mqttport)
     
