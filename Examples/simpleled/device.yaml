@@ -1,0 +1,13 @@
+device:
+  - id: mydevice
+    topics:
+      pub:
+        - topico1
+      sub:
+        - topico1
+  - id: mydevice
+    topics:
+      pub:
+        - topico1
+      sub:
+        - topico1

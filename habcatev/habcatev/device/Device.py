@@ -1,6 +1,6 @@
 import paho.mqtt.client as mqtt
-import time 
 from . import MQTTClient
+
 
 class Device(MQTTClient.MQTTClient):
     """docstring for Device."""
