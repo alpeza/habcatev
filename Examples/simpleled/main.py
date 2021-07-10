@@ -6,7 +6,7 @@ class SimpleLed(habcatev.device.Device.Device):
         super(SimpleLed, self).__init__()
         self.setSubscriptionArr(['#'])
 
-    def on_event(topic,data):
+    def on_event(self,topic,data):
         print("Topic:" + topic + "  Data: " + data)
 
     
