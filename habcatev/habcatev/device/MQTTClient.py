@@ -1,8 +1,10 @@
 import paho.mqtt.client as mqtt
 import threading,time
-import sys
-sys.path.insert(0,'..')
-from . import logs
+import sys,os
+currentdir = os.path.dirname(os.path.realpath(__file__))
+parentdir = os.path.dirname(currentdir)
+sys.path.append(parentdir)
+from . import common
 
 class MQTTClient(object):
     """Handles the mqtt connections"""
@@ -14,7 +16,7 @@ class MQTTClient(object):
         self.mqttport   = int(trimed[1])
         self.deviceid = "habcatdevice-" + str(int(time.time()))
         self.mqClient = mqtt.Client(self.deviceid)
-        self.log = logs.Logs()
+        self.log = common.Logs()
     
     def connect(self):
         self.log.debug('Tratando de conectar con MQTT')
