@@ -1,16 +1,17 @@
 import habcatev,time
+import random 
 
-class SimpleLed(habcatev.device.Device.Device):
+class SimpleExample(habcatev.device.Device.Device):
     """docstring for MyDevice."""
     def __init__(self):
-        super(SimpleLed, self).__init__()
+        super(SimpleExample, self).__init__()
         self.setSubscriptionArr(['#'])
 
     def on_event(self,topic,data):
         print("Topic:" + topic + "  Data: " + data)
 
     def loop(self):
-        print('hola')
+        self.send('mitopico1', random.uniform(10.5, 75.5))
         time.sleep(5)
 
-SimpleLed().run()
+SimpleExample().run()
