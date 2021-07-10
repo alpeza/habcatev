@@ -5,10 +5,10 @@ import yaml
 
 class Device(MQTTClient.MQTTClient):
     """docstring for Device."""
-    def __init__(self,mqttbroker="localhost:1883"):
+    def __init__(self,description='',mqttbroker="localhost:1883"):
         super(Device, self).__init__()
         self._subscriptionarr = ['#']
-        self.deviceDescription = ''
+        self.deviceDescription = description
         self._argumentsParse()
 
 
@@ -28,8 +28,8 @@ class Device(MQTTClient.MQTTClient):
         else:
             self.log.logger.debug('No hay fichero de configuracion')
     
-
         if self.args.run:
+            self.log.logger.debug('Se ejecuta el componente ...')
             self.run()
 
     def setSubscriptionArr(self,subarr):

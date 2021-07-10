@@ -6,7 +6,6 @@ class SimpleExample(habcatev.device.Device.Device):
         super(SimpleExample, self).__init__()
         # El dispositivo se subscribe a todos los topics
         self.setSubscriptionArr(['#'])
-        self.deviceDescription = 'Ejemplo simple en el que se produce y consume'
 
     def on_event(self,topic,data):
         # Lanzamos este codigo cuando se produce un evento
