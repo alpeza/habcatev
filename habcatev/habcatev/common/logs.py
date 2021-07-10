@@ -6,9 +6,9 @@ currentdir = os.path.dirname(os.path.realpath(__file__))
 class Logs(object):
     def __init__(self):
         super(Logs, self).__init__()
-        print(currentdir)
-        self.conffile=currentdir + '/loggings.conf'
+        self.conffile=currentdir + '/logging.conf'
         self._getConfigFile()
+        print(currentdir + '/logging.conf')
         logging.config.fileConfig(self.conffile)
         self.logger = logging.getLogger('habcatLogger')
 
