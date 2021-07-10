@@ -24,6 +24,7 @@ class Device(MQTTClient.MQTTClient):
         if self.args.run:
             self.run()
         if self.args.config:
+            self.log.logger.debug('Cargando fichero de configuracion ...')
             with open(self.args.config) as file:
                 self.config = yaml.load(file, Loader=yaml.FullLoader)
 
