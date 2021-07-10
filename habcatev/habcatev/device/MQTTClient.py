@@ -6,7 +6,7 @@ class MQTTClient(object):
     def __init__(self, subarr=[], brokermqtt="localhost:1883", clientName=""):
         super(MQTTClient, self).__init__()
         #Connection
-        trimed = devGateway.split(':')
+        trimed = brokermqtt.split(':')
         self.mqttserver = trimed[0]
         self.mqttport   = int(trimed[1])
         self.mqClient = mqtt.Client(clientName)
