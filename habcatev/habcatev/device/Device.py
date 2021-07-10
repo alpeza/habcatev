@@ -1,6 +1,7 @@
 import paho.mqtt.client as mqtt
 from . import MQTTClient
 import argparse
+import yaml
 
 class Device(MQTTClient.MQTTClient):
     """docstring for Device."""
@@ -23,7 +24,9 @@ class Device(MQTTClient.MQTTClient):
         if self.args.run:
             self.run()
         if self.args.config:
-            print('Fichero ' + self.args.config )
+            with open(self.args.config) as file:
+                self.config = yaml.load(file, Loader=yaml.FullLoader)
+
 
 
     def setSubscriptionArr(self,subarr):
