@@ -7,7 +7,7 @@ class Logs(object):
     def __init__(self):
         super(Logs, self).__init__()
         print(currentdir)
-        self.conffile=currentdir + '/logging.conf'
+        self.conffile=currentdir + '/loggings.conf'
         self._getConfigFile()
         logging.config.fileConfig(self.conffile)
         self.logger = logging.getLogger('habcatLogger')
