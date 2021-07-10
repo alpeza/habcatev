@@ -24,4 +24,4 @@ formatter=simpleFormatter
 args=(sys.stdout,)
 
 [formatter_simpleFormatter]
-format=%(asctime)s - %(module)s - %(levelname)s - %(message)s
+format=%(asctime)s - %(levelname)s - %(module)s - %(message)s
