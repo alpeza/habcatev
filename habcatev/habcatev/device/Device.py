@@ -33,6 +33,8 @@ class Device(MQTTClient.MQTTClient):
             self.run()
 
     def setSubscriptionArr(self,subarr):
+        self.log.logger.debug('Seteando array de subscripciones ...')
+        self.log.logger.debug(subarr)
         self._subscriptionarr = subarr
     
     def run(self):
