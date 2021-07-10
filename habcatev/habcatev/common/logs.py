@@ -6,9 +6,9 @@ class Logs(object):
     def __init__(self):
         super(Logs, self).__init__()
         self.conffile=''
-        self.log = logging
         self._getConfigFile()
         logging.config.fileConfig('logging.conf')
+        self.logger = logging.getLogger('simpleExample')
 
     def _getConfigFile(self):
         try:

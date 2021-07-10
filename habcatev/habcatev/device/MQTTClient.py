@@ -19,7 +19,7 @@ class MQTTClient(object):
         self.log = common.logs.Logs()
     
     def connect(self):
-        self.log.debug('Tratando de conectar con MQTT')
+        self.log.logger.debug('Tratando de conectar con MQTT')
         self.mqClient.connect(self.mqttserver, self.mqttport)
 
     def _receiveDataFromMQTT(self):
