@@ -16,7 +16,7 @@ class MQTTClient(object):
         self.mqttport   = int(trimed[1])
         self.deviceid = "habcatdevice-" + str(int(time.time()))
         self.mqClient = mqtt.Client(self.deviceid)
-        self.log = common.Logs()
+        self.log = common.logs.Logs()
     
     def connect(self):
         self.log.debug('Tratando de conectar con MQTT')
