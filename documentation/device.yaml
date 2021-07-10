@@ -1,0 +1,19 @@
+componentsFolder: 'devices'
+components:
+  # Sensor parte delantera
+  sensor1:
+    componentName: 'miComponente'
+    config:
+      publish: sensors/datasensor1
+      sleep: 3
+  # Sensor parte trasera
+  sensor2:
+    componentName: 'miComponente'
+    config:
+      publish: sensors/datasensor1
+      sleep: 3
+  # Controller 1
+  controlador:
+    subscribe: 
+      - sensors/#
+    publish: send
