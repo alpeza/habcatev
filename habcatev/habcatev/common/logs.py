@@ -10,7 +10,11 @@ class Logs(object):
         self.log.config.fileConfig('logging.conf')
 
     def _getConfigFile(self):
-        osenv = os.environ['HABCATEV_LOGCONFIG']
-        if osenv and os.path.isfile(osenv):
-            self.conffile = osenv
+        try:
+            osenv = os.environ['HABCATEV_LOGCONFIG']
+            if osenv and os.path.isfile(osenv):
+                self.conffile = osenv
+            print(osenv)
+        except Exception as e:
+            pass
     
