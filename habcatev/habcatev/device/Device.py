@@ -7,9 +7,12 @@ class Device(MQTTClient.MQTTClient):
     def __init__(self,mqttbroker="localhost:1883"):
         super(Device, self).__init__()
         self._subscriptionarr = ['#']
-
-        # Device CLI
         self.deviceDescription = ''
+        self._argumentsParse()
+
+
+    def _argumentsParse(self):
+        # Device CLI
         self.parser = argparse.ArgumentParser(description=self.deviceDescription)
         self.parser.add_argument('--config', help='Fichero YAML de configuración del componente')
         self.parser.add_argument('--run', action='store_true', help='Ejecuta el componente')
@@ -17,7 +20,7 @@ class Device(MQTTClient.MQTTClient):
         
         if self.args.run:
             self.run()
-        if self.args.confile:
+        if self.args.config:
             print('Fichero ' + self.args['config'] )
         #print(self.args)
 
