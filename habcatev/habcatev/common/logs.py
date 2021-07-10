@@ -1,5 +1,6 @@
 import os
 import logging
+import logging.config
 
 class Logs(object):
     def __init__(self):
