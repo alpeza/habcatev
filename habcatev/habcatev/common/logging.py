@@ -1,5 +1,5 @@
 [loggers]
-keys=root,simpleExample
+keys=root,habcatLogger
 
 [handlers]
 keys=consoleHandler
@@ -11,10 +11,10 @@ keys=simpleFormatter
 level=DEBUG
 handlers=consoleHandler
 
-[logger_simpleExample]
+[logger_habcatLogger]
 level=DEBUG
 handlers=consoleHandler
-qualname=simpleExample
+qualname=habcatLogger
 propagate=0
 
 [handler_consoleHandler]
@@ -24,4 +24,4 @@ formatter=simpleFormatter
 args=(sys.stdout,)
 
 [formatter_simpleFormatter]
-format=%(asctime)s - %(name)s - %(levelname)s - %(message)s
+format=%(asctime)s - %(name)s - %(module) - %(levelname)s - %(message)s
