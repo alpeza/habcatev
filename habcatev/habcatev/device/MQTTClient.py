@@ -3,7 +3,7 @@ import threading
 
 class MQTTClient(object):
     """Handles the mqtt connections"""
-    def __init__(self, subarr=[], brokermqtt="localhost:1883", clientName=""):
+    def __init__(self, subarr=['#'], brokermqtt="localhost:1883", clientName=""):
         super(MQTTClient, self).__init__()
         #Connection
         trimed = brokermqtt.split(':')

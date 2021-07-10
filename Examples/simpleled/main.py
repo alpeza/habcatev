@@ -6,8 +6,11 @@ class SimpleLed(habcatev.device.Device.Device):
         super(SimpleLed, self).__init__()
         print('Hola')
 
-    def onInput(self):
-        print('holi')
+    def on_message(self,client, userdata, msg):
+        print(client)
+        print(userdata)
+        print(msg)
+        print('********************++')
 
     def loop(self):
         print('Hola')
