@@ -21,7 +21,7 @@ class Device(MQTTClient.MQTTClient):
         if self.args.run:
             self.run()
         if self.args.config:
-            print('Fichero ' + self.args['config'] )
+            print('Fichero ' + self.args.config )
         #print(self.args)
 
     def setSubscriptionArr(self,subarr):
