@@ -12,7 +12,7 @@ setuptools.setup(
     description="Librería para la gestión de eventos",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="",
+    url="https://github.com/alpeza/habcatev",
     packages=setuptools.find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",

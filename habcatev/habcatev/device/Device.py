@@ -1,7 +1,6 @@
 import paho.mqtt.client as mqtt
 from . import MQTTClient
 
-
 class Device(MQTTClient.MQTTClient):
     """docstring for Device."""
     def __init__(self,mqttbroker="localhost:1883"):
@@ -16,6 +15,7 @@ class Device(MQTTClient.MQTTClient):
         self.connect()
         self.subscribeto(self._subscriptionarr)
         self._startListeners()
+        # Loop principal del dispositivo
         while True:
             self.loop()
 
