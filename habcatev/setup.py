@@ -6,7 +6,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="habcatev",
-    version="0.0.2",
+    version="0.0.3",
     author="HabCat Team",
     author_email="",
     description="Librería para la gestión de eventos",
