@@ -13,6 +13,7 @@ class Logs(object):
 
     def _getConfigFile(self):
         try:
+            # Configuración de loggging externa
             osenv = os.environ['HABCATEV_LOGCONFIG']
             if osenv and os.path.isfile(osenv):
                 self.conffile = osenv

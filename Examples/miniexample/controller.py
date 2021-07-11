@@ -21,5 +21,4 @@ class Controller(habcatev.device.Device.Device):
         self.datatosend['time'] = str(datetime.now())
         self.send(self.config['controller']['publish'], json.dumps(self.datatosend))
 
-
 Controller()
